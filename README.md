@@ -12,7 +12,6 @@
     <br />
     <a href="https://github.com/Lorenalgm/AmazingGraph">Challenge</a>
     ·
-    <a href="https://www.linkedin.com/in/lorenagmontes/">Contact</a>
   </p>
 </p>
 
