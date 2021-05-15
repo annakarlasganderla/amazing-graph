@@ -11,7 +11,6 @@
        <br />
     <br />
     <a href="https://github.com/Lorenalgm/AmazingGraph">Challenge</a>
-    ·
   </p>
 </p>
 
