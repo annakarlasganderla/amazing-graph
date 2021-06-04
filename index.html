@@ -1,37 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <link rel="stylesheet" href="page.css">
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" charset="UTF-8"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <title>Amazing Graph</title>
 </head>
+
 <body>
     <div class="box">
 
-    <div class="logo">DevChallenge</div>
-
-    <nav>
-        <a src="#">Home</a>
-        <a src="#">Features</a>
-        <a src="#">Contact</a>
-    </nav>
-
+        <div class="logo">DevChallenge</div>
+        <i class="btn-mobile fas fa-bars"></i>
+        <nav class="nav">
+            <a src="#">Home</a>
+            <a src="#">Features</a>
+            <a src="#">Contact</a>
+        </nav>
     </div>
-        <img src="team.jpg" alt="ilustration">
+    <img src="team.jpg" alt="ilustration">
 
-        <h1>Create amazing <br> graphics</h1>
+    <h1>Create amazing <br> graphics</h1>
 
-        <p>Colaborate and create beautiful<br> graphics with your team</p>
+    <p>Colaborate and create beautiful<br> graphics with your team</p>
 
-        
+
 
     <button class="button">
         <span>Start Now</span>
     </button>
-
+    <script type="text/javascript">
+        $(".btn-mobile").click(function() {
+            $(this).toggleClass("fa-times");
+            $(".nav").toggleClass("active");
+        });
+    </script>
 </body>
+
 </html>
