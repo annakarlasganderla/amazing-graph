@@ -10,11 +10,12 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background: rgb(248, 248, 248);
 }
 
 .logo {
     padding: 50px;
-    font-family: Roboto,'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: Roboto, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 30px;
     font-style: bold;
     color: #f2ba49;
@@ -22,21 +23,20 @@
     top: 15%;
 }
 
-nav a {
+.nav a {
     text-decoration: none;
-    margin-right: 3px;
-    font-family: Roboto,'Open Sans', 'Helvetica Neue', sans-serif;
-
+    margin-right: 50px;
+    font-family: Roboto, 'Open Sans', 'Helvetica Neue', sans-serif;
     padding-bottom: 1px;
     color: hsl(222, 25%, 14%);
     position: relative;
 }
 
-nav a:hover{
+.nav a:hover {
     cursor: pointer;
 }
 
-nav a::after {
+.nav a::after {
     content: '';
     position: absolute;
     height: 2px;
@@ -49,32 +49,29 @@ nav a::after {
     transition: opacity 0.2s ease, transform 0.2s ease;
 }
 
-nav a:hover::after {
+.nav a:hover::after {
     opacity: 1;
     transform: translateY(0);
 }
 
 h1 {
-    font-family: Roboto,'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: Roboto, 'Open Sans', 'Helvetica Neue', sans-serif;
     color: #808080;
     font-size: 50px;
-
     margin-left: 50px;
 }
 
-img{
+img {
     width: 90%;
     height: 50%;
     display: flex;
     justify-content: center;
- 
     border: none;
-
-    margin: 40px;
+    margin: 70px;
 }
 
 p {
-    font-family: Roboto,'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: Roboto, 'Open Sans', 'Helvetica Neue', sans-serif;
     margin-left: 50px;
     margin-bottom: 20px;
     color: #808080;
@@ -95,7 +92,6 @@ p {
     border-radius: 10px;
     overflow: hidden;
     z-index: 1;
-
     margin-left: 25%;
     margin-top: 1.5%;
     margin-bottom: 20px;
@@ -113,8 +109,8 @@ p {
     left: 50%;
     width: 100%;
     height: 140px;
-    transform: translate3d(-50%,-50%,0) scale3d(0,0,0);
-    transition: opacity .4s cubic-bezier(.19,1,.22,1),transform .75s cubic-bezier(.19,1,.22,1);
+    transform: translate3d(-50%, -50%, 0) scale3d(0, 0, 0);
+    transition: opacity .4s cubic-bezier(.19, 1, .22, 1), transform .75s cubic-bezier(.19, 1, .22, 1);
     background-color: #999999;
     opacity: 0;
     cursor: pointer;
@@ -128,155 +124,225 @@ p {
 .button:hover::before {
     opacity: 1;
     transition-duration: .85s;
-    transform: translate3d(-50%,-50%,0) scale3d(1,1,1);
+    transform: translate3d(-50%, -50%, 0) scale3d(1, 1, 1);
     cursor: pointer;
 }
 
-
-@media (min-width: 1100px) {
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+.btn-mobile {
+    display: none !important;
 }
 
-.box {
-    width: 100%;
-    height: 90px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+@media screen and (max-width: 700px) {
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    .box {
+        width: 100%;
+        height: 90px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: rgb(248, 248, 248);
+    }
+    img {
+        width: 90%;
+        height: 50%;
+        display: flex;
+        justify-content: center;
+        border: none;
+        margin: 30px;
+    }
+    .nav {
+        position: fixed;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+        width: 100%;
+        height: 350px;
+        max-width: 500px;
+        background: rgba(230, 230, 230, 0.815);
+        top: 90px;
+        right: 0;
+        text-align: center;
+        display: none;
+    }
+    .nav a {
+        display: block;
+        text-decoration: none;
+        width: 100%;
+        padding: 60px;
+        margin-bottom: 10px;
+        margin-top: 10px;
+        font-family: Roboto, 'Open Sans', 'Helvetica Neue', sans-serif;
+        padding-bottom: 2px;
+        color: hsl(223, 25%, 14%);
+    }
+    .nav a:hover {
+        cursor: pointer;
+    }
+    .nav a::after {
+        content: '';
+        position: absolute;
+        height: 2px;
+        width: 100%;
+        bottom: 0;
+        opacity: 0;
+        transform: translateY(3px);
+        background: #f2ba49;
+        transition: opacity 0.2s ease, transform 0.2s ease;
+    }
+    .nav a:hover::after {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    .nav::before {
+        content: "";
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-bottom: 10px solid rgba(240, 240, 240, 0.815);
+        position: absolute;
+        top: -10px;
+        right: 9px;
+    }
+    .btn-mobile {
+        float: right;
+        margin-right: 10px;
+        height: 30px;
+        line-height: 30px !important;
+        color: hsl(222, 25%, 14%);
+        font-size: 20px;
+        cursor: pointer;
+        top: 10px;
+        display: block !important;
+    }
+    .nav.active {
+        display: block;
+    }
 }
 
-.logo {
-    padding: 50px;
-    font-family: Roboto,'Open Sans', 'Helvetica Neue', sans-serif;
-    font-size: 30px;
-    font-style: bold;
-    color: #f2ba49;
-    font-weight: bold;
+@media (min-width: 1000px) {
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    .btn-mobile {
+        display: none !important;
+    }
+    .box {
+        width: 100%;
+        height: 90px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .logo {
+        padding: 50px;
+        font-family: Roboto, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-size: 30px;
+        font-style: bold;
+        color: #f2ba49;
+        font-weight: bold;
+    }
+    .nav a {
+        text-decoration: none;
+        margin-right: 50px;
+        font-family: Roboto, 'Open Sans', 'Helvetica Neue', sans-serif;
+        padding-bottom: 1px;
+        color: hsl(222, 25%, 14%);
+        position: relative;
+    }
+    .nav a:hover {
+        cursor: pointer;
+    }
+    .nav a::after {
+        content: '';
+        position: absolute;
+        height: 2px;
+        width: 100%;
+        left: 0;
+        bottom: 0;
+        opacity: 0;
+        transform: translateY(3px);
+        background: #f2ba49;
+        transition: opacity 0.2s ease, transform 0.2s ease;
+    }
+    .nav a:hover::after {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    h1 {
+        font-family: Roboto, 'Open Sans', 'Helvetica Neue', sans-serif;
+        max-width: 90%;
+        padding: 45px;
+        color: #808080;
+        font-size: 90px;
+    }
+    p {
+        font-family: Roboto, 'Open Sans', 'Helvetica Neue', sans-serif;
+        margin-left: 50px;
+        padding-left: 50px;
+        top: .1px;
+        max-width: 90%;
+        color: #808080;
+        line-height: 30px;
+        font-size: 20px;
+    }
+    img {
+        width: 55%;
+        height: 50%;
+        display: flex;
+        padding-right: 9px;
+        justify-content: center;
+        align-items: right;
+        border: none;
+        position: absolute;
+        left: 40%;
+        right: 40%;
+        top: 35%;
+        bottom: 50%;
+    }
+    .button {
+        border: none;
+        padding: 20px;
+        width: 20%;
+        background-color: #f2ba49;
+        color: #808080;
+        font-weight: bold;
+        font-size: 20px;
+        position: relative;
+        border-radius: 10px;
+        overflow: hidden;
+        z-index: 1;
+        margin-left: 15%;
+        margin-top: 1.5%;
+    }
+    .button span {
+        z-index: 1;
+        position: relative;
+    }
+    .button::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 100%;
+        height: 140px;
+        transform: translate3d(-50%, -50%, 0) scale3d(0, 0, 0);
+        transition: opacity .4s cubic-bezier(.19, 1, .22, 1), transform .75s cubic-bezier(.19, 1, .22, 1);
+        background-color: #999999;
+        opacity: 0;
+        cursor: pointer;
+    }
+    .button:hover span {
+        color: white;
+        cursor: pointer;
+    }
+    .button:hover::before {
+        opacity: 1;
+        transition-duration: .85s;
+        transform: translate3d(-50%, -50%, 0) scale3d(1, 1, 1);
+        cursor: pointer;
+    }
 }
-
-nav a {
-    text-decoration: none;
-    margin-right: 50px;
-    font-family: Roboto,'Open Sans', 'Helvetica Neue', sans-serif;
-
-    padding-bottom: 1px;
-    color: hsl(222, 25%, 14%);
-    position: relative;
-}
-
-nav a:hover{
-    cursor: pointer;
-}
-
-nav a::after {
-    content: '';
-    position: absolute;
-    height: 2px;
-    width: 100%;
-    left: 0;
-    bottom: 0;
-    opacity: 0;
-    transform: translateY(3px);
-    background: #f2ba49;
-    transition: opacity 0.2s ease, transform 0.2s ease;
-}
-
-nav a:hover::after {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-h1 {
-    font-family: Roboto,'Open Sans', 'Helvetica Neue', sans-serif;
-    max-width: 90%;
-    padding: 45px;
-    color: #808080;
-    font-size: 90px;
-}
-
-p {
-    font-family: Roboto,'Open Sans', 'Helvetica Neue', sans-serif;
-    margin-left: 50px;
-    padding-left: 50px;
-    top: .1px;
-    max-width: 90%;
-    color: #808080;
-    line-height: 30px;
-    font-size: 20px;
-}
-
-img{
-    width: 55%;
-    height: 50%;
-    display: flex;
-
-    padding-right: 9px;
-    justify-content: center;
-    align-items: right;
-    border: none;
-
-    position: absolute;
-    left: 40%;
-    right: 40%;
-    top: 35%;
-    bottom: 50%;
-}
-
-.button {
-    border: none;
-    padding: 20px;
-    width: 20%;
-    background-color: #f2ba49;
-    color: #808080;
-    font-weight: bold;
-    font-size: 20px;
-    position: relative;
-    border-radius: 10px;
-    overflow: hidden;
-    z-index: 1;
-
-    margin-left: 15%;
-    margin-top: 1.5%;
-}
-
-.button span {
-    z-index: 1;
-    position: relative;
-}
-
-.button::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 100%;
-    height: 140px;
-    transform: translate3d(-50%,-50%,0) scale3d(0,0,0);
-    transition: opacity .4s cubic-bezier(.19,1,.22,1),transform .75s cubic-bezier(.19,1,.22,1);
-    background-color: #999999;
-    opacity: 0;
-    cursor: pointer;
-}
-
-.button:hover span {
-    color: white;
-    cursor: pointer;
-}
-
-.button:hover::before {
-    opacity: 1;
-    transition-duration: .85s;
-    transform: translate3d(-50%,-50%,0) scale3d(1,1,1);
-    cursor: pointer;
-}
-}
-
-
-
-
-
-
